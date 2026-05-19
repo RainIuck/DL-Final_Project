@@ -1,0 +1,2 @@
+"""Animal counting pipeline package."""
+
