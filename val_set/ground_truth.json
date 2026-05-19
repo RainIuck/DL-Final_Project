@@ -1,0 +1,59 @@
+{
+  "val_1.png": {
+    "lion": 2,
+    "fox": 1,
+    "goose": 2,
+    "cat": 1
+  },
+  "val_2.png": {
+    "lion": 3,
+    "cat": 2,
+    "duck": 1
+  },
+  "val_3.png": {
+    "bear": 1,
+    "dog": 1,
+    "wolf": 1,
+    "goose": 3
+  },  
+  "val_4.png": {
+    "bear": 1,
+    "zebra": 2,
+    "lion": 1
+  },
+    "val_5.png": {
+    "dog": 1,
+    "horse": 1,
+    "cat": 1,
+    "tiger": 2,
+    "bear": 1
+  },
+  "val_6.png": {
+    "tiger": 2,
+    "horse": 2,
+    "fox": 1
+  },
+    "val_7.png": {
+    "cow": 2,
+    "pig": 1,
+    "goose": 1,
+    "horse": 2,
+    "tiger": 2
+  },
+  "val_8.png": {
+    "fox": 1,
+    "pig": 2,
+    "horse": 1,
+    "zebra": 1
+  },
+  "val_9.png": {
+    "bear": 3,
+    "duck": 1,
+    "rabbit": 1
+  },
+  "val_10.png": {
+    "pig": 1,
+    "monkey": 2,
+    "duck": 1
+  }
+}
