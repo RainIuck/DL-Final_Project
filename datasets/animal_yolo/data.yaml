@@ -1,0 +1,26 @@
+path: ./datasets/animal_yolo  # 数据集根目录
+train: images/train           # 训练集图片路径
+val: images/val               # 验证集图片路径
+
+# 严格对应的 20 个类别
+names:
+  0: cat
+  1: dog
+  2: horse
+  3: cow
+  4: sheep
+  5: goat
+  6: pig
+  7: rabbit
+  8: chicken
+  9: duck
+  10: goose
+  11: deer
+  12: monkey
+  13: fox
+  14: wolf
+  15: bear
+  16: tiger
+  17: lion
+  18: zebra
+  19: giraffe
