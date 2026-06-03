@@ -1,6 +1,6 @@
 """Project animal classes and conservative YOLO class mapping."""
 
-DEFAULT_MODEL = "yolo26n.pt"
+DEFAULT_MODEL = "yolo26x.pt"
 DEFAULT_CONFIDENCE = 0.25
 
 ANIMAL_CLASSES = (
