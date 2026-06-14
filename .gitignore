@@ -3,4 +3,5 @@ outputs/
 *.pt
 src/__pycache__
 runs/
-datasets/animal_yolo
+datasets/
+DL课程项目验证集/

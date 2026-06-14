@@ -244,7 +244,7 @@ mixed_web_0001.jpg
 5. 多动物图片非常重要，因为最终任务需要 counting。
 6. 保留来源记录，可写入 `datasets/animal_yolo/notes/source_log.md`。
 
-不要把 `val_set/` 当作训练数据。它应该保留给流程检查和评分对比。
+不要把 `val_set/` 当作训练数据。它保留给项目流程检查和计数评分对比，不写入 YOLO `data.yaml`。
 
 ## 6. 标注规范
 
@@ -348,8 +348,6 @@ datasets/animal_yolo/raw/mixed_species/
 ```text
 datasets/animal_yolo/images/train/
 datasets/animal_yolo/labels/train/
-datasets/animal_yolo/images/val/
-datasets/animal_yolo/labels/val/
 ```
 
 示例：
@@ -398,24 +396,24 @@ Label Studio
 
 导出格式选择 YOLO detection format。
 
-## 7. 训练集和验证集划分
+## 7. 训练集和验证集结构
 
-建议按 8:2 划分：
+当前项目按每个动物类别约 8:2 划分：
 
 ```text
-80% images/train + labels/train
-20% images/val   + labels/val
+datasets/animal_yolo/images/train + labels/train  训练集
+datasets/animal_yolo/images/val   + labels/val    YOLO 验证集
 ```
 
-划分时注意：
+整理时注意：
 
-1. 同一来源的近似重复图片不要同时出现在 train 和 val。
+1. 每个类别按图片数量约 80% 放入 train，20% 放入 val。
 2. 每个类别都要在 train 中出现。
 3. 尽量让每个类别也在 val 中出现。
-4. val 中要保留多动物、混淆类别、小目标和复杂背景。
-5. mixed species 图片也要分配一部分到 val。
+4. 同一来源的近似重复图片不要大量同时出现在 train 和 val。
+5. `val_set/` 保持独立，只用于项目级计数检查，不作为 YOLO 验证集。
 
-如果某类样本很少，优先保证 train 中有足够样本，同时手动挑选少量代表性图片到 val。
+如果某类样本很少，优先保证 train 中有足够样本。
 
 ## 8. Hard Negative 和误报控制
 
@@ -447,7 +445,7 @@ sheep, dog, zebra
 7. 没有把 `duck/goose/chicken` 混标。
 8. 没有把 `fox/wolf/tiger/lion` 误标成 dog。
 9. 没有把不支持类别强行标成支持类别。
-10. 验证集没有和训练集大量重复。
+10. `val_set` 保持独立，没有混入 YOLO 训练或验证目录。
 
 ## 10. 训练和验证建议
 
