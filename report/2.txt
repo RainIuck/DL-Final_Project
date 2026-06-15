@@ -1,0 +1,23 @@
+2.1
+数据来源：网上公开的现实动物数据集（datasets/animal_yolo），ai合成单动物和背景的数据集datasets/DOUBAO，融合datasets/DOUBAO中ai动物和背景的多动物数据集datasets/doubao_synthetic_yolo
+数据覆盖：包含所有20类，具体情况分析datasets。
+数据类型：自己推理。
+数据清洗：对于现实动物数据集，我们清洗了不在项目要求的20种动物中的数据，只保留20种动物。对于ai合成的数据集，我们清洗了遮挡过于严重，导致动物完全不可见的数据。
+标注方式：对ai合成的单动物数据进行了标注。
+数据划分：训练集和测试集为8：2
+
+2.2 
+类别映射：写了一个程序，将数据集中的同种或相似种类的动物映射到跟项目的动物类别相同。
+数据增强：使用yolo自带的mosaic等，以及随机旋转、缩放、增加噪点。
+原因：自己推理。
+
+2.3
+初始模型：yolo26x
+初始权重：yolo预训练权重
+训练参数：先在animal_yolo上训练：epoch=80, batch_size=8, image_size=640；
+        然后在doubao_synthetic_yolo上训练：epoch=40, batch_size=8, image_size=640.其余参数yolo自己选择。
+硬件环境：GPU = RTX 5060Ti 16G, animal_yolo上训练了4.7小时，doubao_synthetic_yolo上训练了1小时。
+为什么选择该模型：对比了yolo26n和yolo26x的训练效果，发现该模型的训练效果更好。
+
+2.4 & 2.5
+分析项目说明和代码
